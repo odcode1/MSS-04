@@ -1,5 +1,5 @@
 import math
-
+import cmath
 
 #  ax2 + bx + c = 0
 # solve for real, get exception if not real
@@ -27,5 +27,5 @@ def q_solve(a,b,c):
         result_a2= (-b-cmath.sqrt(discriminante))/(2*a)
         return result_a1,result_a2
 
-print(q_solve(1,2,1))
+print(q_solve(3,2,1))
 
