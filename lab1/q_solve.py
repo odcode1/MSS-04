@@ -2,30 +2,18 @@ import math
 import cmath
 
 #  ax2 + bx + c = 0
-# solve for real, get exception if not real
-# not real if b^2-4ac
+# solve for a,b,c even if they are complex
 
 #solution of quadratic eq= (-b +- discrimiante)/(2a)
 
-##### B+C)
+#REMEMBER THAT YOU MUST WRITE 1J IF YOU WANT TO USE j, NOT eg 1+j, it's 1+1j
+##### D
 def q_solve(a,b,c):
-    discriminante=(b**2 -4*a*c)
-    #print(discriminante)
-    if discriminante>=0:
-        print("roots are real")
-        if discriminante==0:
-            print("only one root")
-            result_a=-b/(2*a)
-            return result_a
-        else:
-            result_a1= (-b+ math.sqrt(discriminante))/(2*a)
-            result_a2= (-b-math.sqrt(discriminante))/(2*a)
-            return result_a1,result_a2
-    else:
-        print("complex roots")
-        result_a1=(-b+ cmath.sqrt(discriminante))/(2*a)
-        result_a2= (-b-cmath.sqrt(discriminante))/(2*a)
-        return result_a1,result_a2
+    discriminante=b**2-4*a*c
+    solution_a= (-b+cmath.sqrt(discriminante))/(2*a)
+    solution_b= (-b-cmath.sqrt(discriminante))/(2*a)
+    return solution_a,solution_b
 
-print(q_solve(3,2,1))
+
+print(q_solve(3+2j,2+3j,1-1j))
 
