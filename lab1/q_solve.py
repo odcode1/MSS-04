@@ -7,10 +7,10 @@ import math
 
 #solution of quadratic eq= (-b +- discrimiante)/(2a)
 
-##### B)
+##### B+C)
 def q_solve(a,b,c):
     discriminante=(b**2 -4*a*c)
-    print(discriminante)
+    #print(discriminante)
     if discriminante>=0:
         print("roots are real")
         if discriminante==0:
@@ -22,9 +22,10 @@ def q_solve(a,b,c):
             result_a2= (-b-math.sqrt(discriminante))/(2*a)
             return result_a1,result_a2
     else:
-        print("no real solution")
+        print("complex roots")
+        result_a1=(-b+ cmath.sqrt(discriminante))/(2*a)
+        result_a2= (-b-cmath.sqrt(discriminante))/(2*a)
+        return result_a1,result_a2
 
 print(q_solve(1,2,1))
 
-
-###### C)
